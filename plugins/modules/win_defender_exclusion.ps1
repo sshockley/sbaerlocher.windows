@@ -9,19 +9,19 @@ Set-StrictMode -Version 2;
 $ErrorActionPreference = "Stop";
 
 # Compare Exclusion Lists if we need to Change something
-function Compare-ExclusionLists($Current,$Desired,$Cleanup)
+function Compare-ExclusionList($Current,$Desired,$Cleanup)
 {
   # We got nothing to Compare agains on Current so we need to change something
-  if($Current -eq $null -and $Desired -ne $null){ return $true;};
+  if($null -eq $Current -and $null -ne $Desired){ return $true;};
 
   # We got nothing to Compare agains and $null is $null so nothing to change here
-  if($Current -eq $null -and $Desired -eq $null){ return $false;};
+  if($null -eq $Current -and $null -eq $Desired){ return $false;};
 
   # We got nothing Desired and we also should not cleanup so we have nothing to change
-  if($Desired -eq $null -and -not $Cleanup) { return $false};
+  if($null -eq $Desired -and -not $Cleanup) { return $false};
 
   # We got nothing Desired but we NEED to Cleanup so we have to change
-  if($Desired -eq $null -and $Cleanup) { return $true;};
+  if($null -eq $Desired -and $Cleanup) { return $true;};
 
   $diff = Compare-Object -ReferenceObject $Current -DifferenceObject $Desired -CaseSensitive:$false
 
@@ -82,7 +82,7 @@ $list = $list | Sort-Object -Property @{Expression={$_.Trim()}} -Unique
 
 # See if we need to Change something
 [string[]]$current = Get-CurrentExclusionList -ExclusionType $type;
-$haveToChange = Compare-ExclusionLists -Current $current -Desired $list -Cleanup $clean
+$haveToChange = Compare-ExclusionList -Current $current -Desired $list -Cleanup $clean
 
 # Check
 if(-not $check_mode -and $haveToChange)

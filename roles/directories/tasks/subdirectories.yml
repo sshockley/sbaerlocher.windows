@@ -1,8 +1,8 @@
 ---
 # tasks file for directories
 
-- name: 'create {{ directory.main }}\{{ subdirectories }} directory'
-  win_file:
+- name: 'Create directory {{ directory.main }}\{{ subdirectories }}'
+  ansible.windows.win_file:
     path: '{{ directory.main }}\\{{ subdirectories }}'
     state: directory
   tags:

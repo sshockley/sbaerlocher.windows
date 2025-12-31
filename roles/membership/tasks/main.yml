@@ -1,8 +1,8 @@
 ---
 # tasks file for membership
 
-- name: 'domain membership'
-  win_domain_membership:
+- name: 'Domain membership'
+  ansible.windows.win_domain_membership:
     dns_domain_name: '{{ membership_domain_name | default(omit) }}'
     domain_admin_user: '{{ membership_admin_user | default(omit) }}'
     domain_admin_password: '{{ membership_admin_password | default(omit) }}'

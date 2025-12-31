@@ -2,9 +2,9 @@
 # tasks file for startlayout
 
 - name: 'Create startlayout'
-  win_template:
+  ansible.windows.win_template:
     src: 'StartLayout.xml.j2'
     dest: "{{ ansible_env.TEMP }}\\StartLayout.xml"
 
 - name: 'Import startlayout'
-  win_shell: "Import-StartLayout -LayoutPath {{ ansible_env.TEMP }}\\StartLayout.xml -MountPath $env:SystemDrive\\"
+  ansible.windows.win_shell: "Import-StartLayout -LayoutPath {{ ansible_env.TEMP }}\\StartLayout.xml -MountPath $env:SystemDrive\\"

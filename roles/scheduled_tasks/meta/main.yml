@@ -3,7 +3,7 @@ galaxy_info:
   author: Simon Baerlocher (https://sbaerlocher.ch)
   description: Create scheduled tasks.
   license: MIT
-  min_ansible_version: 2.9
+  min_ansible_version: '2.9'
   platforms:
     - name: Windows
       versions:
@@ -11,6 +11,6 @@ galaxy_info:
 
   galaxy_tags:
     - windows
-    - scheduled_tasks
+    - scheduledtasks
 
 dependencies: []

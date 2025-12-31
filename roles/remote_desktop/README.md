@@ -19,7 +19,7 @@ remote_desktop_enabled: false
 Determines the encryption level of the remote desktop connection. More on: [![getadmx doc](https://img.shields.io/badge/getadmx-doc-blue.svg)](https://getadmx.com/?Category=Windows_10_2016&Policy=Microsoft.Policies.TerminalServer::TS_ENCRYPTION_POLICY)
 
 ```yml
-remote_desktop_minencryptionLevel: '3'
+remote_desktop_minencryptionlevel: '3'
 ```
 
 ### remote_desktop_port

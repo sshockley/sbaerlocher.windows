@@ -1,15 +1,15 @@
 ---
 # tasks file for directories
 
-- name: 'create {{ directory.main }} directory'
-  win_file:
+- name: 'Create directory {{ directory.main }}'
+  ansible.windows.win_file:
     path: '{{ directory.main }}'
     state: directory
   tags:
     - configuration
 
-- name: 'include directories'
-  include_tasks: subdirectories.yml
+- name: 'Include directories'
+  ansible.builtin.include_tasks: subdirectories.yml
   loop: '{{ directory.subdirectories }}'
   loop_control:
     loop_var: subdirectories

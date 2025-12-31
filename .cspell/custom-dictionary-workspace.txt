@@ -1,0 +1,15 @@
+# Custom Dictionary Words
+Baerlocher
+CLSID
+HKCR
+HKLM
+minencryptionlevel
+NGSC
+NTFS
+onedrive
+psmodule
+regedit
+runas
+scheduledtasks
+securitylayer
+shutdownwithoutlogon
